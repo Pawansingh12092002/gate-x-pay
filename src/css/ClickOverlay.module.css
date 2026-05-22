@@ -1,0 +1,14 @@
+/* ClickOverlay.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 9999;
+}
+
+.visible {
+  opacity: 1;
+}

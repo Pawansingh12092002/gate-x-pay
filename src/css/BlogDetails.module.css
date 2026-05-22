@@ -1,0 +1,201 @@
+
+
+.blogDetailsPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+
+.breadcrumbContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.breadcrumbLink {
+  color: #6b7280;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+
+.breadcrumbLink:hover {
+  color: #f97316;
+}
+
+.separator {
+  color: #d1d5db;
+}
+
+.activeCrumb {
+  color: #f97316;
+  font-weight: 500;
+}
+
+.articleSection {
+  background-color: #0b1120; 
+  color: #d1d5db; 
+  padding: 60px 20px;
+}
+
+.articleContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.articleHeader {
+    margin-top: 54px;
+    margin-bottom: 24px;
+}
+
+
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.articleDate {
+  color: #f3f4f6;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.articleDate span {
+  color: #f97316;
+}
+
+.readTime {
+  color: #f3f4f6;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.articleTitle {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.articleTitle span {
+  color: #f97316;
+}
+
+.featuredImage {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.articleBody h2 {
+  color: #f97316;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+}
+
+.articleBody p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.articleBody .orangeText {
+  color: #f97316;
+}
+
+.articleBody h2 {
+  color: #f97316;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+}
+
+.articleBody p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.articleBody ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.articleBody li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.similarBlogsSection {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.similarBlogsHeading {
+  color: #f97316;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.similarBlogsSub {
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+
+@media (max-width: 1024px) {
+  .blogGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .articleTitle {
+    font-size: 28px;
+    max-width: 100%;
+  }
+  .articleHeader {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+  .articleTitle {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GateXPay Hero Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0e1a; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  :root {
+    --bg: #0a0e1a;
+    --surface: #0f1629;
+    --blue: #3b82f6;
+    --cyan: #22d3ee;
+    --orange: #f97316;
+    --white: #ffffff;
+    --muted: #94a3b8;
+    --border: rgba(59,130,246,0.15);
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius-img: 28px;
+    --ease: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ---- section ---- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: var(--font-body);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 40%, rgba(59,130,246,0.08), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(34,211,238,0.06), transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ---- main row ---- */
+  .hero-main {
+    position: relative; z-index: 1;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 72px 48px;
+    max-width: 1400px;
+    margin: 0 auto; width: 100%;
+  }
+
+  /* ---- left ---- */
+  .hero-left {
+    display: flex; flex-direction: column; gap: 28px;
+    padding-right: 48px;
+  }
+
+  .badge-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-radius: 100px; padding: 6px 16px; width: fit-content;
+    animation: fadeDown 0.6s ease both;
+  }
+  .badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+    animation: pulse 2s infinite;
+  }
+  .badge-text {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700; line-height: 1.12;
+    letter-spacing: -0.02em;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+  .line1 { display: block; color: var(--white); }
+  .line2 {
+    display: block;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .description {
+    font-size: clamp(14px, 1.3vw, 16px); line-height: 1.7;
+    color: var(--muted); max-width: 460px;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  .cta-group {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 32px; border-radius: 100px;
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    color: #fff; font-family: var(--font-body);
+    font-size: 15px; font-weight: 700; letter-spacing: 0.01em;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 24px rgba(249,115,22,0.35);
+    transition: var(--ease);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(249,115,22,0.5);
+  }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; border: none;
+    color: var(--blue); font-family: var(--font-body);
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: var(--ease);
+  }
+  .btn-secondary:hover { color: var(--cyan); gap: 10px; }
+  .arrow { display: inline-flex; font-size: 18px; transition: transform 0.25s ease; }
+  .btn-secondary:hover .arrow { transform: translateX(3px); }
+
+  /* ---- right images ---- */
+  .hero-right {
+    display: flex; justify-content: flex-end;
+    align-items: center; gap: 16px; height: 460px;
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+  .img-card {
+    border-radius: var(--radius-img); overflow: hidden; position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 60px rgba(59,130,246,0.12);
+    border: 1px solid var(--border);
+  }
+  .img-card-primary  { width: 280px; height: 400px; }
+  .img-card-secondary { width: 220px; height: 300px; margin-top: 60px; }
+  .img-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s ease;
+  }
+  .img-card:hover img { transform: scale(1.04); }
+  .img-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10,14,26,0.35) 100%);
+    pointer-events: none;
+  }
+  .floating-tag {
+    position: absolute; top: 16px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 2; pointer-events: none;
+  }
+  .tag-chip {
+    background: rgba(10,14,26,0.75); backdrop-filter: blur(8px);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 3px 10px; font-size: 11px; font-weight: 600;
+    color: var(--cyan); letter-spacing: 0.05em;
+  }
+
+  /* ---- trust bar ---- */
+  .trust-bar {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 24px 72px;
+    max-width: 1400px; margin: 0 auto; width: 100%;
+    display: flex; align-items: center; gap: 48px;
+    animation: fadeUp 0.7s ease 0.4s both;
+    flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .trust-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(59,130,246,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue); flex-shrink: 0;
+  }
+  .trust-icon svg { width: 18px; height: 18px; }
+  .trust-label { font-size: 13px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+
+  /* ---- animations ---- */
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(24px); }  to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse    { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(0.85); } }
+
+  /* ---- responsive ---- */
+  @media (max-width: 1024px) {
+    .hero-main { grid-template-columns: 1fr; padding: 60px 40px 32px; }
+    .hero-left  { padding-right: 0; }
+    .hero-right { height: 320px; justify-content: center; }
+    .img-card-primary  { width: 220px; height: 300px; }
+    .img-card-secondary { width: 170px; height: 240px; }
+    .trust-bar { padding: 20px 40px; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    .hero-main  { padding: 48px 24px 24px; }
+    .hero-right { height: 240px; }
+    .img-card-primary  { width: 160px; height: 220px; }
+    .img-card-secondary { width: 130px; height: 175px; }
+    .trust-bar  { padding: 16px 24px; gap: 20px; }
+    .cta-group  { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" aria-label="Hero Section">
+
+  <div class="hero-main">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Payments Infrastructure</span>
+      </div>
+
+      <h1 class="headline">
+        <span class="line1">Grow Faster with Secure &amp;</span>
+        <span class="line2">Scalable Payments</span>
+      </h1>
+
+      <p class="description">
+        GateXPay helps businesses secure, process, and scale digital payments with
+        advanced tokenization and unified payment infrastructure.
+      </p>
+
+      <div class="cta-group">
+        <a href="#contact" class="btn-primary">Talk to Us</a>
+        <a href="#services" class="btn-secondary">
+          Explore Our Services <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <div class="img-card img-card-primary">
+        <div class="floating-tag">
+          <span class="tag-chip">DMS</span>
+          <span class="tag-chip">DMS</span>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=480&q=80"
+          alt="Team collaborating on digital payment solutions"
+          loading="eager"
+        />
+      </div>
+      <div class="img-card img-card-secondary">
+        <img
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=360&q=80"
+          alt="Developer working on payment infrastructure"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <span class="trust-label">Bank-Grade Security</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/>
+          <path d="M9 7h6M9 11h6M9 15h4"/>
+        </svg>
+      </div>
+      <span class="trust-label">PCI-DSS Compliant</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <span class="trust-label">99.99% Uptime</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2c-2.76 4-4 7-4 10s1.24 6 4 10M12 2c2.76 4 4 7 4 10s-1.24 6-4 10"/>
+        </svg>
+      </div>
+      <span class="trust-label">Trusted by FinTechs &amp; Enterprises</span>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

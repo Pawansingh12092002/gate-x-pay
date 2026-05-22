@@ -1,0 +1,129 @@
+/* HowWeWork.css — "How We Work" Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.hww-section {
+  background-color: #f8fafc; /* Very light blue/gray matching screenshot */
+  padding: 80px 20px 100px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.hww-container {
+  width: 100%;
+  max-width: 1440px; /* Consistent with other sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── HEADER ─── */
+
+.hww-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hww-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1a1f36;
+  margin: 0 0 12px 0;
+}
+
+.hww-highlight {
+  color: #f59e0b; /* Orange highlight */
+}
+
+.hww-underline {
+  width: 80px;
+  height: 2px;
+  background-color: #d1d5db; /* Gray underline */
+  border-radius: 2px;
+}
+
+/* ─── GRID LAYOUT ─── */
+
+.hww-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── INDIVIDUAL CARD SET ─── */
+
+.hww-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hww-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Make it squarish to match design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.hww-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hww-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ─── TEXT UNDER CARD ─── */
+
+.hww-text {
+  text-align: center;
+}
+
+.hww-title {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.hww-subtitle {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+
+@media (max-width: 1024px) {
+  .hww-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hww-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hww-header h2 {
+    font-size: 28px;
+  }
+}

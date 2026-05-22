@@ -1,0 +1,151 @@
+.faqSection {
+  background-color: #f8fafc; /* Light grayish blue background */
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.faqContainer {
+  width: 100%;
+  max-width: 1294px; /* Updated to match Figma (1294px width, 73px left margin in 1440px layout) */
+  min-height: 395px; /* Matched Figma height */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.orangeText {
+  color: #f59e0b;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem {
+  background-color: #eef2ff; /* Soft lavender/blue background */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.questionText {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  margin: 0;
+}
+
+.iconWrapper {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: #1f2937;
+  transition: transform 0.3s ease;
+}
+
+.faqItem.active .iconWrapper {
+  transform: rotate(45deg); /* Turns + into x */
+}
+
+.faqAnswer {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.faqItem.active .faqAnswer {
+  padding: 0 24px 20px 24px;
+  max-height: 200px;
+}
+
+/* ─── RESPONSIVE ─── */
+
+/* 1024px — Medium screens / Laptops */
+@media (max-width: 1024px) {
+  .faqSection {
+    padding: 70px 30px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+/* 768px — Tablet optimizations */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 60px 24px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .questionText {
+    font-size: 15px;
+  }
+  
+  .faqQuestion {
+    padding: 16px 20px;
+  }
+}
+
+/* 320px / 480px — Small Mobile Screen fluid adjustments */
+@media (max-width: 480px) {
+  .faqSection {
+    padding: 40px 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .questionText {
+    font-size: 14px;
+  }
+
+  .faqQuestion {
+    padding: 14px 16px;
+  }
+
+  .faqItem.active .faqAnswer {
+    padding: 0 16px 16px 16px;
+  }
+}

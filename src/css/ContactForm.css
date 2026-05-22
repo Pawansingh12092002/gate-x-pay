@@ -1,0 +1,249 @@
+/* ContactForm.css — Contact Us Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.cf-section {
+  background-color: #f7f9fc;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.cf-container {
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* ─── MAIN WHITE CARD ─── */
+.cf-main-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* ─── HEADER ─── */
+.cf-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cf-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #1a1f36;
+  margin: 0 0 12px 0;
+}
+
+.cf-header p {
+  color: #4b5563;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ─── CONTENT SPLIT ─── */
+.cf-content-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  width: 1188px;
+  max-width: 100%;
+  height: 642px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ─── LEFT INFO COLUMN ─── */
+.cf-info-column {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cf-info-box {
+  background-color: #0b1120; /* Dark navy */
+  border-radius: 16px;
+  padding: 24px 20px;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cf-info-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.cf-icon {
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+}
+
+.cf-info-text {
+  font-size: 13.5px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ─── RIGHT FORM COLUMN ─── */
+.cf-form-column {
+  flex: 1;
+  background-color: #0b1120; /* Dark navy */
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cf-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.cf-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.cf-form-group label {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.cf-form-group input,
+.cf-form-group textarea {
+  background-color: #0b1120;
+  border: 1px solid #374151; /* Gray border */
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.cf-form-group input::placeholder,
+.cf-form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+.cf-form-group input:focus,
+.cf-form-group textarea:focus {
+  outline: none;
+  border-color: #f59e0b; /* Orange focus */
+}
+
+/* ─── SUBMIT BUTTON ─── */
+.cf-submit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cf-submit-btn {
+  background-color: #f59e0b; /* Orange */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cf-submit-btn:hover {
+  background-color: #d97706;
+}
+
+.cf-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ─── RESPONSIVE ─── */
+
+/* 1024px — Switch to stacked column layouts */
+@media (max-width: 1024px) {
+  .cf-content-wrapper {
+    flex-direction: column;
+    width: 100%; /* Override 1188px fixed width */
+    height: auto; /* Override 642px fixed height */
+    border: none; /* Clean up border overlay */
+  }
+  
+  .cf-info-column {
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .cf-info-box {
+    flex: 1;
+    min-width: 240px;
+  }
+}
+
+/* 768px — Tablet optimizations */
+@media (max-width: 768px) {
+  .cf-section {
+    padding: 60px 20px;
+  }
+
+  .cf-main-card {
+    padding: 36px 24px;
+  }
+
+  .cf-info-box {
+    min-width: 100%; /* Full width stack for smaller tablets */
+  }
+}
+
+/* 320px / 480px — Small Mobile Screen fluid adjustments */
+@media (max-width: 480px) {
+  .cf-section {
+    padding: 40px 16px;
+  }
+
+  .cf-main-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+  
+  .cf-form-column {
+    padding: 24px 16px;
+  }
+  
+  .cf-form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .cf-info-column {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .cf-header h2 {
+    font-size: 22px;
+  }
+  
+  .cf-header p {
+    font-size: 13.5px;
+  }
+}

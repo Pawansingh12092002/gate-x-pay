@@ -1,0 +1,57 @@
+.mapSection {
+  background-color: #ffffff; /* Set to white as requested */
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.mapContainer {
+  width: 100%;
+  max-width: 1294px; /* Figma matched width */
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+  border: 0;
+}
+
+/* ─── RESPONSIVE ─── */
+
+/* 1024px — Medium Screens / Laptops */
+@media (max-width: 1024px) {
+  .mapSection {
+    padding: 50px 30px;
+  }
+}
+
+/* 768px — Tablet optimizations */
+@media (max-width: 768px) {
+  .mapSection {
+    padding: 40px 24px;
+  }
+  .mapImage {
+    max-height: 320px;
+  }
+}
+
+/* 320px / 480px — Small Mobile Screen fluid adjustments */
+@media (max-width: 480px) {
+  .mapSection {
+    padding: 30px 16px;
+  }
+  .mapContainer {
+    border-radius: 12px;
+  }
+  .mapImage {
+    max-height: 240px;
+  }
+}

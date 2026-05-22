@@ -1,0 +1,152 @@
+.contactPage {
+  background-color: #060913; /* Match dark theme */
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.contactHero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 160px 40px 100px; /* Top padding accounts for fixed header */
+  box-sizing: border-box;
+}
+
+/* ─── LEFT CONTENT ─── */
+
+.contactLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headline {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.headline .cyanText {
+  color: #00d4ff;
+  display: block;
+  margin-top: 8px;
+}
+
+.subtitle {
+  color: #f59e0b;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 16px;
+  text-transform: capitalize;
+}
+
+.description {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 90%;
+  margin: 0;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f59e0b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+/* ─── RIGHT IMAGES ─── */
+
+.contactRight {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.imgPrimary {
+  width: 420px;
+  height: 460px;
+  border-radius: 65px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.imgSecondary {
+  position: absolute;
+  bottom: -40px;
+  right: 0px;
+  width: 220px;
+  height: 220px;
+  border-radius: 65px;
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  border: 4px solid #060913; /* Gives the cut-out effect */
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 1024px) {
+  .contactHero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 140px;
+  }
+  
+  .contactLeft {
+    align-items: center;
+  }
+  
+  .description {
+    max-width: 100%;
+  }
+  
+  .contactRight {
+    margin-top: 40px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .headline {
+    font-size: 40px;
+  }
+  .imgPrimary {
+    width: 100%;
+    max-width: 340px;
+    height: 380px;
+  }
+  .imgSecondary {
+    width: 160px;
+    height: 160px;
+    bottom: -20px;
+    right: -10px;
+  }
+}

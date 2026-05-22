@@ -1,0 +1,549 @@
+/* Header.css — Fully Responsive Navbar for Gate X Pay Technologies */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  --gxp-h-bg:       #060913; /* Solid dark navy to match hero */
+  --gxp-h-bg-s:     rgba(6, 9, 19, 0.98);
+  --gxp-h-border:   transparent;
+  --gxp-h-border-s: rgba(255, 255, 255, 0.05);
+  --gxp-cyan:       #0ea5e9; /* Bright blue */
+  --gxp-blue:       #0ea5e9;
+  --gxp-white:      #ffffff;
+  --gxp-muted:      #e2e8f0;
+  --gxp-font:       'Sora', 'DM Sans', sans-serif;
+  --gxp-ease:       all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Height tokens — change once, used everywhere */
+  --nav-h:    120px;   /* desktop */
+}
+
+/* ────────────────────────── HEADER SHELL ────────────────────────── */
+
+.gxp-header {
+  position: fixed;
+  top: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px; /* Match #root width exactly */
+  height: var(--nav-h);
+  z-index: 1000;
+  background: var(--gxp-h-bg);
+  /* Removed blur to keep it solid */
+  border-bottom: 1px solid var(--gxp-h-border);
+  transition: var(--gxp-ease);
+  font-family: var(--gxp-font);
+}
+
+.gxp-header.scrolled {
+  background: var(--gxp-h-bg-s);
+  border-bottom-color: var(--gxp-h-border-s);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.45), 0 0 20px rgba(0,198,255,0.06);
+}
+
+/* ────────────────────────── INNER CONTAINER ────────────────────────── */
+
+.gxp-header-container {
+  width: 100%;
+  max-width: 1440px; /* Matches the rest of the page containers */
+  margin: 0 auto; /* Centers it perfectly */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px; /* Added padding to push logo and buttons inwards */
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* ────────────────────────── LOGO ────────────────────────── */
+
+.gxp-logo {
+  /* Normal flex item — NO absolute positioning */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: var(--gxp-ease);
+}
+
+.gxp-logo-img {
+  height: 140px; /* Increased native height to keep it very prominent and matches original visual size */
+  width: auto;
+  max-width: 350px;
+  object-fit: contain;
+  display: block;
+  transition: var(--gxp-ease);
+  filter: drop-shadow(0 0 6px rgba(0, 198, 255, 0.18));
+  border-radius: 65px;
+}
+
+/* ────────────────────────── DESKTOP NAV ────────────────────────── */
+
+.gxp-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.gxp-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.gxp-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Nav Links ── */
+.gxp-nav-item > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--gxp-muted);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--gxp-ease);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gxp-nav-item > a:hover {
+  color: var(--gxp-white);
+}
+
+/* Glowing underline for ALL nav links */
+.gxp-nav-item > a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gxp-cyan), var(--gxp-blue));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.5);
+}
+
+.gxp-nav-item > a:hover::after,
+.gxp-nav-item > a.active::after {
+  transform: scaleX(1);
+}
+
+.gxp-nav-item > a.active {
+  color: var(--gxp-white);
+  font-weight: 600;
+}
+
+/* ── CTA Button ── */
+.gxp-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 100px;
+  background: #0ea5e9; /* Solid light blue */
+  color: #fff;
+  font-family: var(--gxp-font);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--gxp-ease);
+  /* no shadow initially */
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.gxp-contact-btn:hover {
+  transform: translateY(-2px);
+  background: #0284c7;
+}
+
+.gxp-phone-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.gxp-contact-btn:hover .gxp-phone-icon {
+  transform: scale(1.1) rotate(12deg);
+}
+
+/* ────────────────────────── MEGA MENU ────────────────────────── */
+
+.gxp-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 999;
+  padding: 40px 73px; /* 73px matches figma margin spacing exactly */
+  animation: megaMenuFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes megaMenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gxp-mega-container {
+  width: 100%;
+  max-width: 1294px; /* Figma matched container width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gxp-mega-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Badge wrapper holds the badge statically on the left */
+.gxp-mega-badge-wrapper {
+  flex: 0 0 200px;
+}
+
+.gxp-mega-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #eef2ff; /* Soft lavender/blue */
+  color: #1e3a8a; /* Deep navy text */
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-family: var(--gxp-font);
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gxp-mega-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #3b82f6; /* Blue icon */
+}
+
+.arrow-right {
+  margin-left: auto;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+/* Columns */
+.gxp-mega-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 30px;
+}
+
+.mega-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mega-col li {
+  position: relative;
+  padding-left: 16px;
+  color: #4b5563; /* Medium grey text */
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  text-align: left;
+}
+
+.mega-col li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9ca3af; /* Gray bullet point */
+  font-size: 14px;
+}
+
+.mega-col li:hover {
+  color: #f59e0b; /* Orange hover effect on links! Very sleek! */
+}
+
+/* ─── CARET ARROW ROTATION (Custom Request: Absolute position to prevent layout shift) ─── */
+.gxp-nav-item > a.gxp-has-dropdown {
+  padding-right: 32px; /* Pre-reserve space for the absolute caret so text never jumps! */
+}
+
+.gxp-nav-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg); /* Vertically centered, points UP by default */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* When hovered or active, slide out and point DOWN */
+.gxp-nav-item:hover .gxp-nav-arrow,
+.gxp-nav-arrow.open {
+  opacity: 1;
+  transform: translateY(-50%) rotate(0deg); /* Points DOWN when active */
+}
+
+.gxp-caret-icon {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Divider between CSP and TSP */
+.mega-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 32px 0;
+}
+
+/* ────────────────────────── HAMBURGER BUTTON ────────────────────────── */
+
+.gxp-mobile-toggle {
+  display: none;              /* hidden on desktop */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--gxp-h-border-s);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  transition: var(--gxp-ease);
+  flex-shrink: 0;
+  z-index: 1002;
+}
+
+.gxp-mobile-toggle:hover {
+  background: rgba(0, 198, 255, 0.08);
+  border-color: rgba(0, 198, 255, 0.3);
+}
+
+.gxp-bar {
+  width: 20px;
+  height: 2px;
+  background: var(--gxp-muted);
+  border-radius: 2px;
+  transition: var(--gxp-ease);
+  transform-origin: center;
+  display: block;
+}
+
+/* X animation */
+.gxp-mobile-toggle.open .gxp-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: var(--gxp-cyan);
+}
+.gxp-mobile-toggle.open .gxp-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.gxp-mobile-toggle.open .gxp-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: var(--gxp-cyan);
+}
+
+/* ────────────────────────── OVERLAY ────────────────────────── */
+
+.gxp-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gxp-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ────────────────────────── MOBILE MENU (slide-down) ────────────────────────── */
+
+.gxp-mobile-menu {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  background: rgba(6, 10, 22, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--gxp-h-border);
+  padding: 0 20px;
+  display: none;            /* hidden on desktop */
+  flex-direction: column;
+  gap: 2px;
+  z-index: 999;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s cubic-bezier(0.77, 0, 0.175, 1),
+              padding 0.3s ease,
+              opacity 0.25s ease;
+  opacity: 0;
+}
+
+.gxp-mobile-menu.open {
+  max-height: 600px;
+  padding: 16px 20px 24px;
+  opacity: 1;
+}
+
+.gxp-mobile-link {
+  display: flex;
+  align-items: center;
+  padding: 13px 12px;
+  border-radius: 10px;
+  color: var(--gxp-muted);
+  font-family: var(--gxp-font);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--gxp-ease);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.gxp-mobile-link:hover,
+.gxp-mobile-link.active {
+  background: rgba(0, 198, 255, 0.06);
+  color: var(--gxp-white);
+}
+
+.gxp-mobile-link.active {
+  color: var(--gxp-cyan);
+  font-weight: 600;
+}
+
+.gxp-mobile-divider {
+  height: 1px;
+  background: var(--gxp-h-border);
+  margin: 10px 0;
+}
+
+.gxp-mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--gxp-cyan), var(--gxp-blue));
+  color: #fff;
+  font-family: var(--gxp-font);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 6px;
+  box-shadow: 0 4px 20px rgba(0, 198, 255, 0.3);
+  transition: var(--gxp-ease);
+}
+
+.gxp-mobile-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 26px rgba(0, 198, 255, 0.5);
+}
+
+/* ──────────────────────────── RESPONSIVE BREAKPOINTS ──────────────────────────── */
+
+/* 1440px — standard desktop alignment wrapper */
+.gxp-header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* 1024px — Switch to mobile layout (replacing 900px/1100px) */
+@media (max-width: 1024px) {
+  :root { --nav-h: 68px; }
+
+  .gxp-header-container { padding: 0 28px; gap: 12px; }
+
+  /* Hide desktop nav & CTA & Mega Menu */
+  .gxp-nav { display: none; }
+  .gxp-mega-menu { display: none !important; }
+
+  /* Show hamburger */
+  .gxp-mobile-toggle { display: flex; }
+
+  /* Show overlay */
+  .gxp-overlay { display: block; }
+
+  /* Show mobile slide-down menu */
+  .gxp-mobile-menu { display: flex; }
+}
+
+/* 768px — Tablet optimizations */
+@media (max-width: 768px) {
+  :root { --nav-h: 62px; }
+  .gxp-header-container { padding: 0 20px; }
+  .gxp-logo-img { height: 90px; /* Native size control */ }
+}
+
+/* 320px / 480px — Small Mobile Screen fluid adjustments */
+@media (max-width: 480px) {
+  :root { --nav-h: 56px; }
+  .gxp-header-container { padding: 0 12px; }
+  .gxp-logo-img { height: 75px; max-width: 140px; }
+  .gxp-mobile-toggle { width: 36px; height: 36px; }
+  .gxp-bar { width: 16px; }
+}

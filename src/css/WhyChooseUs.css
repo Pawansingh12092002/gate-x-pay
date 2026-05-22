@@ -1,0 +1,217 @@
+/* WhyChooseUs.css — "Why Industry Leaders Choose Us" Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.wcu-section {
+  background-color: #f7f9fc;
+  padding: 80px 20px 100px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.wcu-container {
+  width: 100%;
+  max-width: 1440px;
+  /* Aligning with the Services section width */
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ─── HEADER ─── */
+
+.wcu-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wcu-header h2 {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  font-size: 36px;
+  /* Slightly larger, matching the screenshot styling */
+  font-weight: 600;
+  color: #0f172a;
+  /* Dark slate/navy tone */
+  margin-bottom: 8px;
+}
+
+.wcu-highlight {
+  color: #f59e0b;
+  /* Orange accent */
+}
+
+.wcu-line {
+  width: 160px;
+  height: 1.5px;
+  background-color: #475569;
+  /* Sleek centered line */
+  margin: 16px auto 28px;
+}
+
+.wcu-header p {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ─── GRID LAYOUT ─── */
+
+.wcu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ─── CARD DESIGN ─── */
+
+.wcu-card {
+  background-color: #0d121f;
+  /* Dark navy card bg */
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.wcu-card:hover {
+  transform: translateY(-4px);
+}
+
+.wcu-icon-wrapper {
+  background-color: rgba(245, 158, 11, 0.15);
+  /* Soft orange bg */
+  color: #f59e0b;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.wcu-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.wcu-card-title {
+  color: #f59e0b;
+  /* Orange title */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.wcu-card-desc {
+  color: #ffffff;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.wcu-card-subtitle {
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: auto;
+  /* Pushes to bottom if card is taller */
+}
+
+.wcu-card-subdesc {
+  color: #ffffff;
+  ;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.wcu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wcu-list li {
+  position: relative;
+  padding-left: 16px;
+  color: #e5e7eb;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.wcu-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f59e0b;
+  font-size: 16px;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+
+/* 1024px — Medium screens (2 columns) */
+@media (max-width: 1024px) {
+  .wcu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .wcu-header h2 {
+    font-size: 32px;
+  }
+}
+
+/* 768px — Tablet optimizations */
+@media (max-width: 768px) {
+  .wcu-section {
+    padding: 60px 20px 80px;
+  }
+
+  .wcu-header h2 {
+    font-size: 28px;
+  }
+
+  .wcu-card {
+    padding: 24px 20px;
+  }
+}
+
+/* 320px / 480px — Small Mobile Screen fluid adjustments (1 column) */
+@media (max-width: 480px) {
+  .wcu-section {
+    padding: 40px 16px 60px;
+  }
+
+  .wcu-container {
+    gap: 32px;
+  }
+
+  .wcu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wcu-header h2 {
+    font-size: 24px;
+  }
+
+  .wcu-header p {
+    font-size: 13.5px;
+    margin-bottom: 12px;
+  }
+
+  .wcu-card {
+    padding: 20px 16px;
+  }
+}

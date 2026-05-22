@@ -1,0 +1,100 @@
+/* Industries.css — "Tailored Solutions for Every Industry" Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.industries-section {
+  background-color: #f7f9fc; /* Very light background to make cards pop */
+  padding: 80px 20px 100px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.industries-container {
+  width: 100%;
+  max-width: 1440px; /* Aligning with previous sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── HEADER ─── */
+
+.industries-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.industries-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1a1f36;
+  margin: 0 0 16px 0;
+}
+
+.industries-highlight {
+  color: #f59e0b; /* Orange highlight */
+}
+
+.industries-subtitle {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ─── GRID LAYOUT ─── */
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── CARD IMAGE SETTINGS ─── */
+
+.industry-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: transparent; /* Assuming images have the dark background baked in */
+  display: flex;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.industry-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .industries-header h2 {
+    font-size: 26px;
+  }
+  
+  .industries-subtitle {
+    font-size: 13.5px;
+  }
+}

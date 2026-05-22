@@ -1,0 +1,448 @@
+/* Hero.module.css — Fully Responsive Hero Section */
+
+:root {
+  --color-bg: #0a0e1a;
+  --color-surface: #0f1629;
+  --color-accent-blue: #3b82f6;
+  --color-accent-cyan: #22d3ee;
+  --color-accent-orange: #f97316;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+  --color-border: rgba(59, 130, 246, 0.15);
+  --font-display: 'Sora', 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', 'Inter', sans-serif;
+  --radius-image: 28px;
+  --shadow-glow: 0 0 60px rgba(59, 130, 246, 0.12);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─────────────────────── SECTION ─────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 750px; /* Matched Figma height */
+  height: 750px;
+  background-color: #060913; /* Solid dark navy */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-body);
+  /* Always tracks the fixed header height — defined in Header.css :root */
+  padding-top: var(--nav-h, 72px);
+  box-sizing: border-box;
+}
+
+/* Radial glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────── MAIN ROW ─────────────────────── */
+
+.heroMain {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 0;
+  padding: 40px 40px 24px; /* Added 40px horizontal padding to match header */
+  max-width: 1440px; /* Matched Figma width */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────── LEFT CONTENT ─────────────────── */
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-right: 48px;
+}
+
+/* Badge pill */
+.badgePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 100px;
+  padding: 6px 16px;
+  width: fit-content;
+  animation: fadeSlideDown 0.6s ease both;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent-cyan);
+  box-shadow: 0 0 8px var(--color-accent-cyan);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-cyan);
+}
+
+/* Headline */
+.headline {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0;
+  animation: fadeSlideUp 0.7s ease 0.1s both;
+}
+
+.headlineLine1 {
+  display: block;
+  color: #ffffff;
+}
+
+.headlineLine2 {
+  display: block;
+  color: #0ea5e9; /* Bright light blue */
+}
+
+/* Description */
+.description {
+  font-size: clamp(13px, 1.3vw, 16px);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 460px;
+  margin: 0;
+  animation: fadeSlideUp 0.7s ease 0.2s both;
+}
+
+/* CTA Buttons */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeSlideUp 0.7s ease 0.3s both;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: #f59e0b; /* Solid orange */
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  background: #d97706;
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #0ea5e9; /* Bright blue */
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  padding: 0;
+  white-space: nowrap;
+}
+
+.btnSecondary:hover {
+  color: var(--color-accent-cyan);
+  gap: 10px;
+}
+
+.arrowIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btnSecondary:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+/* ─────────────────────── RIGHT IMAGES ─────────────────── */
+
+.heroRight {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  height: 500px;
+  animation: fadeSlideUp 0.8s ease 0.15s both;
+}
+
+.imageCard {
+  border-radius: 65px; /* Updated from pill shape to 65px */
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.imageCardPrimary {
+  width: 240px;
+  height: 480px;
+  border-radius: 65px;
+  opacity: 1;
+  transform: rotate(0deg);
+  flex-shrink: 0;
+}
+
+.imageCardSecondary {
+  width: 220px;
+  height: 380px;
+  border-radius: 65px;
+  opacity: 1;
+  transform: rotate(0deg);
+  margin-top: 100px; /* Shift down */
+  flex-shrink: 0;
+}
+
+.imageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.imageCard:hover img {
+  transform: scale(1.04);
+}
+
+/* Floating tag removed from view */
+.floatingTag { display: none; }
+
+/* ─────────────────────── TRUST BAR ─────────────────────── */
+
+.trustBar {
+  position: relative;
+  z-index: 10; /* Ensure it stays above images if they overlap */
+  padding: 16px 40px 32px; /* Added horizontal padding to align with hero content */
+  max-width: 1440px; /* Matched to rest of the page */
+  margin: -60px auto 0; /* Negative margin pulls it up */
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  animation: fadeSlideUp 0.7s ease 0.4s both;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.trustIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0ea5e9;
+  flex-shrink: 0;
+}
+
+.trustLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* ─────────────────────── ANIMATIONS ─────────────────────── */
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* ──────────────────── RESPONSIVE BREAKPOINTS ──────────────────── */
+
+/* Large Desktop (1200px–1400px) */
+@media (max-width: 1280px) {
+  .heroMain {
+    padding: 32px 48px 24px;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .heroLeft {
+    padding-right: 32px;
+  }
+  .imageCardPrimary { width: 240px; height: 340px; }
+  .imageCardSecondary { width: 185px; height: 260px; }
+  .heroRight { height: 390px; }
+  .trustBar { padding: 16px 48px 28px; gap: 30px; }
+}
+
+/* Laptop (1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: auto;
+  }
+  .heroMain {
+    grid-template-columns: 1fr;
+    padding: 32px 20px 24px;
+    gap: 40px;
+  }
+  .heroLeft {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .description {
+    max-width: 100%;
+  }
+  .ctaGroup {
+    justify-content: center;
+  }
+  .heroRight {
+    height: 300px;
+    justify-content: center;
+  }
+  .imageCardPrimary { width: 210px; height: 290px; }
+  .imageCardSecondary { width: 160px; height: 220px; margin-top: 50px; }
+  .trustBar { padding: 16px 40px 28px; gap: 24px; justify-content: center; margin: 30px auto 0; }
+  .trustLabel { font-size: 13px; }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .hero {
+    /* --nav-h is 64px at 900px breakpoint, add 8px breathing room */
+    padding-top: max(var(--nav-h, 64px), 64px);
+  }
+  .heroMain {
+    padding: 32px 24px 20px;
+    gap: 32px;
+  }
+  .headline {
+    font-size: clamp(26px, 6vw, 38px);
+  }
+  .heroRight {
+    height: 240px;
+    gap: 12px;
+  }
+  .imageCardPrimary { width: 165px; height: 230px; }
+  .imageCardSecondary { width: 130px; height: 180px; margin-top: 40px; }
+  .trustBar {
+    padding: 12px 24px 24px;
+    gap: 16px;
+    justify-content: center;
+    margin: 24px auto 0;
+  }
+  .trustItem { gap: 10px; }
+  .trustIcon { width: 44px; height: 44px; border-radius: 10px; }
+  .trustLabel { font-size: 12px; white-space: normal; max-width: 100px; }
+  .badgeText { font-size: 11px; }
+}
+
+/* Large Mobile (600px) */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: max(var(--nav-h, 60px), 60px);
+  }
+  .heroMain {
+    padding: 24px 16px 16px;
+    gap: 28px;
+  }
+  .heroRight {
+    height: 200px;
+    gap: 10px;
+  }
+  .imageCardPrimary { width: 140px; height: 195px; border-radius: 80px; }
+  .imageCardSecondary { width: 110px; height: 155px; margin-top: 35px; border-radius: 60px; }
+  .ctaGroup { flex-direction: column; align-items: center; width: 100%; }
+  .btnPrimary { width: 100%; justify-content: center; padding: 14px 24px; font-size: 15px; }
+  .btnSecondary { font-size: 14px; }
+  .trustBar { gap: 12px; margin: 24px auto 0; }
+  .trustItem { gap: 8px; }
+  .trustIcon { width: 38px; height: 38px; }
+  .trustLabel { font-size: 11px; }
+}
+
+/* Small Mobile (480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: max(var(--nav-h, 56px), 56px);
+  }
+  .heroMain {
+    padding: 20px 14px 12px;
+    gap: 24px;
+  }
+  .headline {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+  .description {
+    font-size: 13px;
+  }
+  .heroRight {
+    height: 175px;
+    gap: 8px;
+  }
+  .imageCardPrimary { width: 118px; height: 168px; border-radius: 60px; }
+  .imageCardSecondary { width: 94px; height: 132px; margin-top: 28px; border-radius: 50px; }
+  .trustBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    padding: 10px 14px 20px;
+    justify-items: start;
+    margin: 20px auto 0;
+  }
+  .trustItem { gap: 8px; }
+  .trustIcon { width: 34px; height: 34px; border-radius: 8px; }
+  .trustLabel { font-size: 10.5px; white-space: normal; }
+}
