@@ -7,20 +7,16 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Q1. What services does GateXPay provide?",
-      answer: "GateXPay provides secure tokenization services, scalable payment infrastructure, merchant onboarding, and advanced fintech integrations tailored to your business needs."
     },
     {
       question: "Q2. How quickly can integrations be completed?",
-      answer: "Our API and SDKs are designed for rapid deployment. Most standard integrations can be completed within a few days, depending on your system architecture."
     },
     {
       question: "Q3. Does GateXPay support enterprise businesses?",
-      answer: "Yes, our scalable payment infrastructure is built to handle high transaction volumes securely, making it ideal for enterprise-level businesses."
     },
     {
       question: "Q4. Are GateXPay solutions secure and compliant?",
-      answer: "Absolutely. We adhere to the highest industry security standards, including PCI-DSS compliance, to ensure all transactions and data are fully protected."
-    }
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -54,9 +50,11 @@ const FAQ = () => {
                   </svg>
                 </div>
               </div>
-              <div className={styles.faqAnswer}>
-                <p>{faq.answer}</p>
-              </div>
+              {faq.answer && (
+                <div className={styles.faqAnswer}>
+                  <p>{faq.answer}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
