@@ -350,6 +350,12 @@
   margin: 32px 0;
 }
 
+/* ── Policies Mega Menu Columns ── */
+.gxp-mega-columns.two-cols {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+}
+
 /* ────────────────────────── HAMBURGER BUTTON ────────────────────────── */
 
 .gxp-mobile-toggle {
@@ -444,9 +450,10 @@
 }
 
 .gxp-mobile-menu.open {
-  max-height: 600px;
+  max-height: 85vh;
   padding: 16px 20px 24px;
   opacity: 1;
+  overflow-y: auto;
 }
 
 .gxp-mobile-link {
@@ -502,6 +509,98 @@
   transform: translateY(-1px);
   box-shadow: 0 6px 26px rgba(0, 198, 255, 0.5);
 }
+
+/* Mobile Services Accordion Dropdown Styles */
+.gxp-mobile-arrow {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--gxp-muted);
+  opacity: 0.7;
+}
+
+.gxp-mobile-arrow.open {
+  transform: rotate(180deg);
+  color: var(--gxp-cyan);
+  opacity: 1;
+}
+
+.gxp-mobile-services-dropdown {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  margin: 4px 12px 12px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gxp-mobile-services-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gxp-mobile-service-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 8px 0;
+}
+
+.gxp-mobile-service-group:last-child {
+  border-bottom: none;
+}
+
+.gxp-mobile-service-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gxp-white);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--gxp-ease);
+}
+
+.gxp-mobile-service-group-title:hover {
+  color: var(--gxp-cyan);
+}
+
+.gxp-mobile-service-list {
+  list-style: none;
+  padding: 12px 0 6px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 360px) {
+  .gxp-mobile-service-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+}
+
+.gxp-mobile-service-list li {
+  color: #94a3b8;
+  font-size: 12px;
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.4;
+  text-align: left;
+  transition: var(--gxp-ease);
+}
+
+.gxp-mobile-service-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gxp-cyan);
+  font-size: 10px;
+  top: -1px;
+}
+
 
 /* ──────────────────────────── RESPONSIVE BREAKPOINTS ──────────────────────────── */
 

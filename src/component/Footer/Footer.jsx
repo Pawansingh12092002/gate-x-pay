@@ -108,12 +108,12 @@ const Footer = () => {
         {/* BOTTOM SECTION: Legal Links & Socials */}
         <div className="footer-bottom">
           <ul className="ft-legal-links">
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms & Conditions</a></li>
-            <li><a href="#refund">Refund Policy</a></li>
-            <li><a href="#cookies">Cookies Policy</a></li>
-            <li><a href="#disclaimer">Disclaimer Policy</a></li>
-            <li><a href="#security">Security Policy</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+            <li><a href="/refund-policy">Refund Policy</a></li>
+            <li><a href="/cookies-policy">Cookies Policy</a></li>
+            <li><a href="/disclaimer-policy">Disclaimer Policy</a></li>
+            <li><a href="/security-policy">Security Policy</a></li>
           </ul>
 
           <div className="ft-socials">
