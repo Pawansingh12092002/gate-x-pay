@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import CTA from '../CTA/CTA';
 import ContactForm from '../ContactForm/ContactForm';
-import Footer from '../Footer/Footer';
 import styles from '../../css/BlogPage.module.css';
 
 // Local assets image for blog cards (POS payment terminals)
@@ -247,8 +246,7 @@ const BlogPage = () => {
       <CTA />
       <ContactForm />
 
-      {/* Dynamic Footer */}
-      <Footer />
+    
     </div>
   );
 };

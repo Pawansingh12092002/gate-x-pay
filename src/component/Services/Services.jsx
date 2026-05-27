@@ -3,14 +3,6 @@
 import React, { useState } from 'react';
 import '../../css/Services.css';
 
-// Generic placeholder image SVG based on the screenshot
-const PlaceholderGraphic = () => (
-  <svg viewBox="0 0 100 100" className="gxp-placeholder-svg" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="40,30 60,70 20,70" fill="#757575" opacity="0.8" />
-    <circle cx="60" cy="60" r="15" fill="#505050" opacity="0.5" />
-  </svg>
-);
-
 const Services = () => {
   const [activeTab, setActiveTab] = useState('csp');
   const [cspExpanded, setCspExpanded] = useState(false);
@@ -40,9 +32,10 @@ const Services = () => {
           {activeTab === 'csp' && (
             <article className="gxp-service-h-card">
               <div className="gxp-card-image-wrapper">
-                <div className="gxp-placeholder-bg">
-                  <PlaceholderGraphic />
-                </div>
+                <img
+                  src="csp.webp"
+                  className="gxp-service-image"
+                />
               </div>
 
               <div className="gxp-card-content">
@@ -85,9 +78,11 @@ const Services = () => {
           {activeTab === 'tsp' && (
             <article className="gxp-service-h-card">
               <div className="gxp-card-image-wrapper">
-                <div className="gxp-placeholder-bg">
-                  <PlaceholderGraphic />
-                </div>
+                <img
+                  src="/TSP.png"
+                  alt="TSP Services"
+                  className="gxp-service-image"
+                />
               </div>
 
               <div className="gxp-card-content">
@@ -130,4 +125,3 @@ const Services = () => {
 };
 
 export default Services;
-

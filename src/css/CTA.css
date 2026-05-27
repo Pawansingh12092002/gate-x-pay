@@ -5,7 +5,7 @@
 .cta-section {
   width: 100%;
   /* White background for clean look */
-  background: #272626;
+  background: #4a48ca;
   display: flex;
   justify-content: center;
   position: relative;
@@ -56,7 +56,7 @@
 .cta-text:last-of-type {
   margin-bottom: 32px;
 }
-
+  
 .cta-btn {
   display: inline-block;
   background-color: #f59e0b;

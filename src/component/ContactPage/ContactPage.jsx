@@ -3,7 +3,6 @@ import Header from '../header/Header';
 import ContactForm from '../ContactForm/ContactForm';
 import FAQ from '../FAQ/FAQ';
 import LocationMap from '../LocationMap/LocationMap';
-import Footer from '../Footer/Footer';
 import styles from '../../css/ContactPage.module.css';
 
 const ContactPage = () => {
@@ -56,8 +55,7 @@ const ContactPage = () => {
       {/* Location Map Section */}
       <LocationMap />
       
-      {/* Footer Section */}
-      <Footer />
+    
     </div>
   );
 };

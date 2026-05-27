@@ -17,8 +17,6 @@ const Header = () => {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState('home');
 
-  const hoverTimeoutRef = React.useRef(null);
-
   useEffect(() => {
     if (pathname.startsWith('/blog')) {
       setActiveLink('blog');
@@ -68,62 +66,10 @@ const Header = () => {
     return () => document.removeEventListener('click', handleOutsideClick);
   }, [isMegaMenuOpen, isPoliciesOpen]);
 
-  useEffect(() => {
-    return () => {
-      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    };
-  }, []);
-
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setMobileServicesExpanded(false);
     setMobilePoliciesExpanded(false);
-  };
-
-  const handleMouseEnterServices = () => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    setIsMegaMenuOpen(true);
-    setIsPoliciesOpen(false);
-  };
-
-  const handleMouseLeaveServices = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsMegaMenuOpen(false);
-    }, 150);
-  };
-
-  const handleMouseEnterPolicies = () => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    setIsPoliciesOpen(true);
-    setIsMegaMenuOpen(false);
-  };
-
-  const handleMouseLeavePolicies = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsPoliciesOpen(false);
-    }, 150);
-  };
-
-  const handleMouseEnterMenu = () => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    setIsMegaMenuOpen(true);
-  };
-
-  const handleMouseLeaveMenu = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsMegaMenuOpen(false);
-    }, 150);
-  };
-
-  const handleMouseEnterPoliciesMenu = () => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    setIsPoliciesOpen(true);
-  };
-
-  const handleMouseLeavePoliciesMenu = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsPoliciesOpen(false);
-    }, 150);
   };
 
   const handleLinkClick = (id, href, e) => {
@@ -159,21 +105,13 @@ const Header = () => {
               {[
                 { id: 'home',     label: 'Home',     href: pathname === '/' ? '#home' : '/#home' },
                 { id: 'services', label: 'Services',  href: pathname === '/' ? '#services' : '/#services', hasDropdown: true },
-                { id: 'policies', label: 'Policies',  href: '#policies', hasDropdown: true },
                 { id: 'about',    label: 'About Us', href: pathname === '/' ? '#about' : '/#about' },
                 { id: 'blog',     label: 'Blog',     href: '/blog' },
+                { id: 'policies', label: 'Policies',  href: '#policies', hasDropdown: true },
               ].map(({ id, label, href, hasDropdown }) => (
                 <li
                   key={id}
                   className="gxp-nav-item"
-                  onMouseEnter={
-                    id === 'services' ? handleMouseEnterServices :
-                    id === 'policies' ? handleMouseEnterPolicies : undefined
-                  }
-                  onMouseLeave={
-                    id === 'services' ? handleMouseLeaveServices :
-                    id === 'policies' ? handleMouseLeavePolicies : undefined
-                  }
                 >
                   <a
                     href={href}
@@ -219,11 +157,7 @@ const Header = () => {
 
         {/* Desktop Mega Menu for Services */}
         {isMegaMenuOpen && (
-          <div
-            className="gxp-mega-menu"
-            onMouseEnter={handleMouseEnterMenu}
-            onMouseLeave={handleMouseLeaveMenu}
-          >
+          <div className="gxp-mega-menu">
             <div className="gxp-mega-container">
               {/* CSP Services Section */}
               <div className="gxp-mega-section">
@@ -302,11 +236,7 @@ const Header = () => {
 
         {/* Desktop Mega Menu for Policies */}
         {isPoliciesOpen && (
-          <div
-            className="gxp-mega-menu"
-            onMouseEnter={handleMouseEnterPoliciesMenu}
-            onMouseLeave={handleMouseLeavePoliciesMenu}
-          >
+          <div className="gxp-mega-menu">
             <div className="gxp-mega-container">
               <div className="gxp-mega-section">
                 <div className="gxp-mega-badge-wrapper">
@@ -500,4 +430,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -10,8 +10,6 @@ import FAQ from "../component/FAQ/FAQ";
 import LocationMap from "../component/LocationMap/LocationMap";
 import CTA from "../component/CTA/CTA";
 import ContactForm from "../component/ContactForm/ContactForm";
-import Footer from "../component/Footer/Footer";
-
 export default function HomePage() {
   return (
     <>
@@ -25,7 +23,6 @@ export default function HomePage() {
       <LocationMap />
       <CTA />
       <ContactForm />
-      <Footer />
     </>
   );
 }

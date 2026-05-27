@@ -81,6 +81,13 @@
   letter-spacing: -0.02em;
 }
 
+.gxp-policy-hero-image {
+  max-width: 400px;
+  height: auto;
+  margin: 24px auto 0;
+  display: block;
+}
+
 .gxp-policy-updated {
   font-size: 14.5px;
   color: #94a3b8;

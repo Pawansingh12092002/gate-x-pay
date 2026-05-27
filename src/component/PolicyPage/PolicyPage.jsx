@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
-import Footer from "../Footer/Footer";
 import "../../css/PolicyPage.css";
 
-const PolicyPage = ({ title, lastUpdated, sections }) => {
+const PolicyPage = ({ title, lastUpdated, sections, heroImage }) => {
   const [activeSection, setActiveSection] = useState(sections[0]?.id || "");
 
   useEffect(() => {
@@ -62,6 +61,7 @@ const PolicyPage = ({ title, lastUpdated, sections }) => {
         <div className="gxp-policy-hero-content">
           <span className="gxp-policy-badge">Legal &amp; Compliance</span>
           <h1 className="gxp-policy-title">{title}</h1>
+          {heroImage && <img src={heroImage} alt={title} className="gxp-policy-hero-image" />}
           <p className="gxp-policy-updated">Last Updated: {lastUpdated}</p>
         </div>
       </section>
@@ -120,8 +120,7 @@ const PolicyPage = ({ title, lastUpdated, sections }) => {
         </div>
       </main>
 
-      {/* Footer Navigation */}
-      <Footer />
+    
     </div>
   );
 };

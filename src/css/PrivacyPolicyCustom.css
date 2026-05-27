@@ -1,0 +1,200 @@
+/* PrivacyPolicyCustom.css - screenshot-matched legal page */
+
+.gxp-privacy-layout-custom {
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background: #f5f6fb;
+  color: #050816;
+  font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+}
+
+.gxp-privacy-hero-custom {
+  min-height: 459px;
+  padding: 96px 16px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #070c20;
+  text-align: center;
+}
+
+.gxp-privacy-title-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  color: #05a9f4;
+  font-family: var(--font-display, "Sora", Arial, sans-serif);
+  font-size: clamp(28px, 4.7vw, 38px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow:
+    0 1px 0 #0b315b,
+    0 0 9px rgba(0, 174, 255, 0.45);
+  -webkit-text-stroke: 1px rgba(0, 203, 255, 0.55);
+}
+
+.gxp-privacy-feather-custom {
+  width: clamp(24px, 4vw, 34px);
+  height: clamp(24px, 4vw, 34px);
+  transform: rotate(-8deg) translateY(-2px);
+  filter: drop-shadow(0 0 7px rgba(124, 58, 237, 0.65));
+  flex: 0 0 auto;
+}
+
+.gxp-privacy-container-custom {
+  width: 100%;
+  background: #f5f6fb;
+  padding: 26px 14px 52px;
+}
+
+.gxp-privacy-card-custom {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #070b17;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 2.55;
+}
+
+.gxp-privacy-card-custom p {
+  margin: 0;
+}
+
+.gxp-privacy-intro-custom {
+  margin-bottom: 24px;
+}
+
+.gxp-privacy-company-info-custom {
+  display: block;
+  margin: 0 0 24px;
+  color: #070b17;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.gxp-privacy-company-info-custom strong {
+  display: block;
+  font-weight: 800;
+}
+
+.gxp-privacy-section-custom {
+  margin-bottom: 22px;
+}
+
+.gxp-privacy-section-title-custom {
+  margin: 0 0 9px;
+  color: #ff9800;
+  font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.gxp-privacy-list-custom {
+  margin: 5px 0 0;
+  padding-left: 34px;
+}
+
+.gxp-privacy-list-custom li {
+  margin: 0 0 2px;
+  padding-left: 1px;
+}
+
+.gxp-privacy-note-custom {
+  margin-top: 10px !important;
+  font-weight: 700;
+}
+
+.gxp-privacy-footer-info-custom {
+  margin-top: 28px;
+  color: #070b17;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.gxp-privacy-footer-info-custom strong {
+  display: block;
+  font-weight: 800;
+}
+
+.gxp-privacy-footer-info-custom a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.gxp-privacy-hero-image {
+  display: block;
+  margin: 24px auto 0;
+  max-width: 419px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .gxp-privacy-container-custom {
+    padding: 30px 18px 60px;
+  }
+
+  .gxp-privacy-card-custom,
+  .gxp-privacy-company-info-custom,
+  .gxp-privacy-footer-info-custom {
+    font-size: 19.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gxp-privacy-hero-custom {
+    min-height: 122px;
+    padding: 48px 10px 27px;
+  }
+
+  .gxp-privacy-title-custom {
+    font-size: 22px;
+  }
+
+  .gxp-privacy-feather-custom {
+    width: 22px;
+    height: 22px;
+  }
+
+  .gxp-privacy-container-custom {
+    padding: 17px 8px 34px;
+  }
+
+  .gxp-privacy-card-custom,
+  .gxp-privacy-company-info-custom,
+  .gxp-privacy-footer-info-custom,
+  .gxp-privacy-section-title-custom {
+    font-size: 7.5px;
+  }
+
+  .gxp-privacy-card-custom {
+    line-height: 1.45;
+  }
+
+  .gxp-privacy-intro-custom,
+  .gxp-privacy-company-info-custom {
+    margin-bottom: 13px;
+  }
+
+  .gxp-privacy-section-custom {
+    margin-bottom: 13px;
+  }
+
+  .gxp-privacy-section-title-custom {
+    margin-bottom: 5px;
+  }
+
+  .gxp-privacy-list-custom {
+    margin-top: 2px;
+    padding-left: 10px;
+  }
+}

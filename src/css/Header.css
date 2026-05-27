@@ -575,13 +575,6 @@
   gap: 8px;
 }
 
-@media (min-width: 360px) {
-  .gxp-mobile-service-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 12px;
-  }
-}
-
 .gxp-mobile-service-list li {
   color: #94a3b8;
   font-size: 12px;

@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '../header/Header';
 import NeedHelpForm from '../NeedHelpForm/NeedHelpForm';
-import Footer from '../Footer/Footer';
 import styles from '../../css/BlogDetails.module.css';
 import blogStyles from '../../css/BlogPage.module.css'; // Reusing card styles
 
@@ -305,7 +304,6 @@ const BlogDetails = () => {
 
       </main>
 
-      <Footer />
     </div>
   );
 };

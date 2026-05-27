@@ -1,5 +1,6 @@
 import "../css/index.css";
 import "../css/App.css";
+import Footer from "../component/Footer/Footer";
 
 export const metadata = {
   title: "Gate X Pay - Secure Payment Solutions",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <div id="root">
           {children}
+          <Footer />
         </div>
       </body>
     </html>
